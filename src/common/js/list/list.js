@@ -3,7 +3,7 @@ class Node {
     value:任意值
     next Node类型的数据结构
     */
-    constructor (value, next) {
+    constructor (value=null, next = null) {
         this.value = value;
         this.next = next;
     }
@@ -149,17 +149,122 @@ function reverseList(head){
     }
     return pre // 链表仍旧是原来的链表
 }
-
+// 研究一下头插法
 function reverseListT(head){
     let reHead = new Node(null,null);
     let node = head,pre = null;
     while(node){
         let next = node.next
         node.next = pre;
-        reHead.next = node
+        reHead.next = node // 与上面一样 
         pre = node; // 保存上一个结点
         node = next; // 结点更新
 
     }
     return reHead // 返回了一个新链表 多开辟了N个空间
+}
+
+/*
+    合并有序链表
+    p1，p2:链表的头结点/ 不是头指针
+
+*/
+
+function merge(p1, p2){
+    // 健壮性判定 如果其中一个链表为空的话
+    if(!p1){
+        return p2;
+    } else if(!p2){
+        return p1;
+    }
+    let head = new Node(),
+    node = head // 中间层工具结点 js默认传引用真的蛋疼 
+    // 当p1与p2中有一个为空时跳出循环
+    while(p1&&p2){
+        if(p1.value < p2.value){
+            node.next = p1 // 暂存的结点 更改指向
+            node = p1 // 更换其中结点
+            p1 = p1.next
+            
+        } else {
+            node.next = p2
+            node = p2
+            p2 = p2.next
+        }
+        
+        if(!p1){
+            node.next = p2
+        }
+
+        if(!p2){
+            node.next = p1;
+        }
+    }
+}
+
+// 复杂链表的复制
+
+class complexNode {
+    constructor(value,next=null,sibling = null){
+        this.value = value;
+        this.next = next;
+        this.sibling = sibling
+    }
+} 
+/*
+@param{complexNode} first
+*/
+function cloneNodes(first){
+    if(!first){
+        return null
+    }
+
+    const map = new Map(); // 定义一个映射表
+    let copyFirst = new complexNode(first.value),
+    node = first.next, // 被copy链的头结点
+    last = copyFirst; // copy连的当前结点，此节点相比被复制节点少一位 这一位是为了放下一个结点的
+
+    map.set(first, copyFirst) // map的使用 创建一个映射表
+
+    // 第一次遍历
+    while(node){
+        last.next = new complexNode(node.value); // 复制新的结点
+        last = last.next // 复制链表后移 指向最后一个结点 尾插法
+        map.set(node, last) // 当前同value值得 两个结点一一对应
+        node = node.next // 被复制节点后移一位
+    }
+   // console.log(map,'第一次被遍历的map',map.size)
+
+    // 第二次遍历，迁移sibling
+    node = first
+    while(node){
+        if(map.get(node)){
+            // 利用sibling里存储的仍然是map里的key值类型达到了便于查找的目的
+            // 因为原结点与复制结点在map中一一对应的关系 可以快速方便的寻找复制链表中的对应结点  太取巧了吧，，
+            map.get(node).sibling = map.get(node.sibling)
+        }
+        node = node.next
+    }
+    return copyFirst
+}
+
+/**
+ * 测试代码
+ */
+const node1 = new complexNode("a"),
+  node2 = new complexNode("b"),
+  node3 = new complexNode("c"),
+  node4 = new complexNode("d");
+
+node1.next = node2;
+node2.next = node3;
+node3.next = node4;
+
+node1.sibling = node3;
+node4.sibling = node2;
+
+let copyNode = cloneNodes(node1);
+while (copyNode) {
+  console.log(copyNode,'复制的结点');
+  copyNode = copyNode.next;
 }
