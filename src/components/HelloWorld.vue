@@ -31,10 +31,18 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  created(){
+    axios.get('http://106.54.204.4:3000/api/plugin/statismock/get_system_status')
+    .then((res) =>{
+      console.log(res)
+    })
   }
 }
 </script>

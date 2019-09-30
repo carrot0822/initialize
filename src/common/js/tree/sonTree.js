@@ -11,3 +11,10 @@
          this.right = right
      }
  }
+
+ function hasSubTree(p1, p2){
+     let result = false;
+     if(p1 && p2){
+         if(p1.value == p2.value)
+     }
+ }
