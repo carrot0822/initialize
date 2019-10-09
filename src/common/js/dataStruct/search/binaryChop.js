@@ -30,9 +30,24 @@ function binaryChop(key,list){
     }
     return -1
 }
-
+/**
+ * 递归
+ */
+function binaryChop2(key, list,low,high){
+    if(low >= high){
+        return -1
+    }
+    let mid = (low + high) >>> 1
+    if(list[mid] == key){
+        return mid
+    } else if(list[mid]>key){
+        return binaryChop2(key,list,low,mid)
+    } else if(list[mid]<key){
+        return binaryChop2(key,list,mid,high)
+    }
+}
 console.time('二分查找')
-console.log(binaryChop(9,list))
+console.log(binaryChop2(9,list,0,list.length))
 console.timeEnd('二分查找')
 
 /**
