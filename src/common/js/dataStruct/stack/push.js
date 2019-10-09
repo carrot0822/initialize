@@ -23,7 +23,10 @@
 
 依次执行，最后辅助栈为空。如果不为空说明弹出序列不是该栈的弹出顺序
  */
-
+/**
+ * 获取栈顶元素
+ * @param {stack} stack 
+ */
  function getStackTop(stack){
      if(!Array.isArray(stack)){
          return null

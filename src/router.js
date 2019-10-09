@@ -13,6 +13,10 @@ export default new Router({
         {
             path:'/login',
             component:Login
+        },
+        {
+            path:'/validate',
+            component:()=>import('../src/components/validate.vue')
         }
     ]
 })
