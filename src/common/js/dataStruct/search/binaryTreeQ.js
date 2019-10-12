@@ -13,17 +13,20 @@ class treeNode{
  * @param {number} key 
  * @param {treeNode} treeNode 
  */
-function searchBst(key,treeNode){
+function searchBst(key,treeNode,ANode=null){
     
     if(treeNode.key==null|| key == treeNode.key){
         
         return treeNode
     }
     else if(key<treeNode.key){
-      return  searchBst(key,treeNode.left) // 没人接收= =即使是递归也要好好写return啊
+        
+      searchBst(key,treeNode.left) // 没人接收= =即使是递归也要好好写return啊
+      
     }
     else if(key>treeNode.key){
-      return  searchBst(key,treeNode.right)
+      searchBst(key,treeNode.right)
+      
     }
 }
 /**
@@ -40,10 +43,10 @@ function searchBst2(key,treeNode,root=null){
         return treeNode
     }
     if(key<treeNode.key){
-      return  searchBst2(key,treeNode.left,treeNode)
+        searchBst2(key,treeNode.left,treeNode)
     }
     if(key>treeNode.key){
-       return searchBst2(key,treeNode.right,treeNode)
+        searchBst2(key,treeNode.right,treeNode)
     }
 }
 /**
@@ -76,19 +79,21 @@ function insertBst(key,Node){
 function insertBst2(key,Node){
     if(Node===null){
         let Node = new treeNode(key) // emmm好像是返回值大小写写错了
+        console.log(Node,'结果')
         return Node
+        
     }
     if(key == Node.key){ // 这里是有不同的 可以先进行一次查找看是否存在 不存在就不执行 也可以一边遍历一边对比吧
         return false
     }
     if(key<Node.key){
         
-       insertBst(key,Node.left) // 为什么去掉等号就没了 加入等号代表克隆？
-        
+        Node.left=  insertBst2(key,Node.left) // 为什么去掉等号就没了 加入等号代表克隆？
+        return Node
     } else if(key > Node.key) {
         
-      insertBst(key,Node.right)
-
+        Node.right = insertBst2(key,Node.right)
+        return Node
     } 
     
 }
@@ -111,34 +116,39 @@ function deleteBst(key,Node){
         return false
     }
     if(key<Node.key){
-      Node.left = deleteBst(key,Node.left) // 效果是遍历 其实
-      return Node
+      deleteBst(key,Node.left) // 效果是遍历 其实
+      
     } else if(key>Node.key){
         
-      Node.right = deleteBst(key,Node.right)
-      return Node
+       deleteBst(key,Node.right)
+      
     } else {
         let root = Node
         if(Node.left==null&&Node.right==null){
             console.log("移除的Node",Node)
-            return null
+            Node = null // 释放
         }
         if(root.left!=null&&root.right==null){
             // 不能Node = Node.left然后传递
-            return Node.left
+            console.log(Node,Node.left,'改变前')
+            let next= Node.left
+            Node = next
+            console.log(Node,Node.left,'更改后')
         }
         if(root.right!=null&&root.left==null){
-            
-            return Node.right
+            console.log(Node,Node.left,'改变前')
+            let next = Node.right
+            Node = next
+            console.log(Node,Node.left,'更改后')
         }
         if(root.right&&root.left){
             while(root.left){
                 root = root.left
             }
-            
+            console.log(Node,Node.left,'改变前')
             Node.key = root.key
-            Node.left = null
-            return Node
+            root = null
+            console.log(Node,Node.left,'更改后')
         }
     }
 }
@@ -150,11 +160,15 @@ function deleteBst(key,Node){
 const root = new treeNode(4)
     left = new treeNode(1)
     right = new treeNode(6);
+    
     root.left = left
     root.right = right
+    
 console.time('时间')
-insertBst(8,root)
-insertBst(5,root)
-deleteBst(8,root)
+
+ insertBst2(8,root)
+insertBst2(5,root)
+insertBst2(9,root)
+deleteBst(5,root)
 console.log(root,'删除后')
 console.timeEnd("时间")
