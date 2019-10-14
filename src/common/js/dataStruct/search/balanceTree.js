@@ -1,5 +1,5 @@
 // 平衡二叉树
-/**
+/**为什么？
  * 性能分析点
  * 时间复杂度
  * 空间复杂度
@@ -21,7 +21,7 @@ class Node {
 /**
  * 算法 二叉树插入的失衡调整- -那删除也是要失衡调整吧 维持平衡二叉树
  */
-// LL型旋转 失衡节点的左子树的左子树插入了节点
+// LL型旋转 失衡节点的左子树的左子树插入了节点 右旋
 //  先找到失衡节点 根据 deepth来找 deepth的计算 遍历深度
 // 判定失衡节点属于四种类型的哪一种 然后选用对应的函数 如何判定 
  /**
@@ -86,5 +86,23 @@ function RRrotate(treeNode){
     return son; // 返回这个节点就比较有意思了 返回值
 
 }
+// 左旋顺时针失衡节点转到右字树  右旋逆时针 失衡节点去左子树
+// LR型旋转 往失衡节点的左子树节点的右字树插入节点后失衡
+/**
+ * 先把失衡节点的左子树当做失衡节点左旋RR处理
+ * @param {Node} treeNode 
+ */
 
-// LR型旋转 失衡
+function LRrotate(treeNode){
+    RRrotate(treeNode.left)
+    LLrotate(treeNode)
+}
+
+function RLrotate(treeNode){
+    LLrotate(treeNode.right)
+    RRrotate(treeNode)
+}
+
+// 排序二叉树的删除
+
+// 二叉树的深度 二叉树的平衡因子
