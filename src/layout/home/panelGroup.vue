@@ -4,8 +4,44 @@
       <div class="card-panel">
         <div class="card-panel-icon-wrapper">图标</div>
         <div class="card-panel-description">
-          <div class="card-panel-text">这里是描述</div>
-          <div class="card-panel-num">数据100</div>
+          <div class="card-panel-text">报错数量</div>
+          <div class="card-panel-num">
+            <count :end="1000"></count>
+          </div>
+        </div>
+      </div>
+    </el-col>
+
+    <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
+      <div class="card-panel">
+        <div class="card-panel-icon-wrapper">图标</div>
+        <div class="card-panel-description">
+          <div class="card-panel-text">访问量</div>
+          <div class="card-panel-num">
+            <count :end="1000"></count>
+          </div>
+        </div>
+      </div>
+    </el-col>
+    <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
+      <div class="card-panel">
+        <div class="card-panel-icon-wrapper">图标</div>
+        <div class="card-panel-description">
+          <div class="card-panel-text">首屏启动</div>
+          <div class="card-panel-num">
+            <count :end="1000"></count>
+          </div>
+        </div>
+      </div>
+    </el-col>
+    <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
+      <div class="card-panel">
+        <div class="card-panel-icon-wrapper">图标</div>
+        <div class="card-panel-description">
+          <div class="card-panel-text">接口访问失败</div>
+          <div class="card-panel-num">
+            <count :end="1000"></count>
+          </div>
         </div>
       </div>
     </el-col>
@@ -13,7 +49,17 @@
 </template>
 
 <script>
-export default {};
+import count from '../home/count'
+export default {
+  data(){
+    return{
+      endVal:1000, // 如果数据是异步的话 需要v-if处理
+    }
+  },
+  components:{
+    count
+  }
+};
 </script>
 
 <style lang="scss" scoped>
