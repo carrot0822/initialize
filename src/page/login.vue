@@ -73,7 +73,7 @@ export default {
       particlesJS("particles-js", particlesConfig);
     },
     submit() {
-      this.$router.push({ path: "/index" });
+      this.$router.push({ path: "/" });
     },
     // 画布初始化
     canvasInit() {
