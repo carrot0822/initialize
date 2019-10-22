@@ -27,6 +27,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+额外欠缺API
+git使用简介说明
+npm简介说明
 --- 
 后台系统快速启动模板 应该包括
 登录到鉴权的一套配置
