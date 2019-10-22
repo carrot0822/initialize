@@ -12,8 +12,8 @@ export default new Router({
             component:Login
         },
         {
-            path:'/validate',
-            component:()=>import('../src/components/validate.vue')
+            path:'/directive',
+            component:()=>import('../src/components/directive.vue')
         },
         {
             path:'/',
@@ -32,6 +32,20 @@ export default new Router({
                 }
             ]
         },
-        
+        {
+            path:'/copy',
+            component:Layout,
+            redirect: '/copy/index',
+            children:[
+                {
+                    path:'index',
+                    component:()=>import('../src/components/directive.vue'),
+                    name:'copy',
+                    meta:{
+
+                    }
+                }
+            ]
+        }
     ]
 })
