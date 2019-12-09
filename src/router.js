@@ -46,6 +46,21 @@ export default new Router({
                     }
                 }
             ]
+        },
+        {
+            path:'/test',
+            component:Layout,
+            redirect: '/test/index',
+            children:[
+                {
+                    path:'index',
+                    component:()=>import('../src/components/Tinymce/test.vue'),
+                    name:'test',
+                    meta:{
+
+                    }
+                }
+            ]
         }
     ]
 })

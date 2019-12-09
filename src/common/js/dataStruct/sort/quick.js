@@ -13,7 +13,7 @@
  * @param {number} left  数组起始索引
  * @param {number} right  数组后备索引
  */
- function quickSort(arr,left,right){
+ function quickSort(arr,left=0,right = arr.length -1){
     if(left < right){
         var x = arr[right],
             i = left -1,
@@ -51,3 +51,40 @@
     }
     return quickSort2(left).concat([pivot],quickSort2(right))
  }
+ 
+ function quickSort3(arr){
+	const sort =(arr,left=0, right = arr.length -1) =>{
+		if(left >= right){
+			return
+		}
+		let i = left;
+		let j = right;
+		const key = arr[left] // 最后一位为基准判断 保留存储
+		while(i<j){
+			//  从后往前找  找到第一个比基准值大的交换
+			while(i<j && key <= arr[j] ){
+				j--; // 此时第一次j确认
+			} 
+			arr[i] = arr[j]
+			while(i<j && key >= arr[i]){
+				i++;
+			}
+			arr[j] = arr[i] 
+		}
+		arr[i] = key // 把保存的基准值还给中间的i
+		sort(arr,left, i-1) // 然后左边分割重复上述
+		sort(arr,i+1,right) // 右边数组分割重复上述
+	}
+	
+	const newArr = arr.concat() // 拷贝一次数组 健壮性
+	sort(newArr)
+	return newArr
+ }
+ 
+ let testArr = [1,5,3,4,7,10,9]
+ 
+console.time('快排耗时') // 
+console.log(quickSort3(testArr));
+console.timeEnd('快排耗时')
+ 
+ 
