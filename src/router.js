@@ -54,7 +54,7 @@ export default new Router({
             children:[
                 {
                     path:'index',
-                    component:()=>import('../src/components/Tinymce/test.vue'),
+                    component:()=>import('../src/components/boring/battery.vue'),
                     name:'test',
                     meta:{
 
