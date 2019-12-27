@@ -54,7 +54,7 @@ export default new Router({
             children:[
                 {
                     path:'index',
-                    component:()=>import('../src/components/boring/battery.vue'),
+                    component:()=>import('../src/components/video/video2.vue'),
                     name:'test',
                     meta:{
 

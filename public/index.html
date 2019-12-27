@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <!-- <script src="/live2dw/lib/L2Dwidget.min.js"></script> -->
-    <link rel="stylesheet" href="/live2d//css//live2d.css">
-    <title>reader</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but reader doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <div id="landlord">
-        <div class="message" style="opacity:0"></div>
-        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
-        <div class="hide-button">隐藏</div>
-    </div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <!-- <script src="/live2dw/lib/L2Dwidget.min.js"></script> -->
+  <link rel="stylesheet" href="/live2d//css//live2d.css">
+  <title>reader</title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but reader doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+  </div>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>
 <script type="text/javascript" src="./tinymce/tinymce.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
@@ -31,12 +35,19 @@
 <script type="text/javascript">
   loadlive2d("live2d", "/live2d/model/tia/model.json");
 </script>
+<script>
+  //全局方式覆盖 SWF文件在Flash技术位置的位置
+</script>
+<!-- <script type="text/javascript" src="./video//video.min.js" ></script>
+<script type="text/javascript" src="./video/lang/zh-CN.js"></script> 
+<script type="text/javascript" src="./video//videojs-flash.min.js"></script>
+<script type="text/javascript">
+  videojs.options.flash.swf = "./video/video-js.swf";
+  window.videojs = videojs
+</script> -->
 
 <script>
-
-
-  
-/* setTimeout(() => {
+  /* setTimeout(() => {
       window.L2Dwidget.init({
         pluginRootPath: 'live2dw/',
         pluginJsPath: 'lib/',
@@ -49,9 +60,6 @@
         log: false
       })
     }, 3000) */
-
-
 </script>
 
 <style></style>
-  

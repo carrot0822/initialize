@@ -7,6 +7,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'nprogress/nprogress.css'
 import './setting/permission'
 import Directives from './directives/directives'
+
+import 'video.js/dist/video-js.css'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(Directives)
