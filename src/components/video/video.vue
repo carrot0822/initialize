@@ -48,8 +48,20 @@
 </template>
 
 <script>
+  const DEFAULT_EVENTS = [
+    'loadeddata',
+    'canplay',
+    'canplaythrough',
+    'play',
+    'pause',
+    'waiting',
+    'playing',
+    'ended',
+    'error'
+  ]
 
 export default {
+  name:'player',
   data() {
     return {
       videoObj: {
@@ -62,53 +74,54 @@ export default {
       var player = window.videojs("my-video");
       player.src("rtmp://192.168.2.29:1935/live/4");
       player.play();
-      console.log('这啥')
+      console.log("这啥");
     },
-    flashOpen(){
-      var hasFlash = 0 // 是否安装了flash
+    flashOpen() {
+      var hasFlash = 0; // 是否安装了flash
 
-      var flashVersion = 0 // flash版本
-      var isValid = 0 // 是否过期
+      var flashVersion = 0; // flash版本
+      var isValid = 0; // 是否过期
       // IE浏览器
-      if("ActiveXObject" in window){
-        try{
-          var swf = new ActiveXObject("ShockwaveFlash.ShockwaveFlash")
+      if ("ActiveXObject" in window) {
+        try {
+          var swf = new ActiveXObject("ShockwaveFlash.ShockwaveFlash");
           hasFlash = 1;
           isValid = 1;
           VSwf = swf.GetVariable("$version");
           flashVersion = parseInt(VSwf.split(" ")[1].split(",")[0]);
-        }catch(e){}
-      // 非IE浏览器
-      }else{
+        } catch (e) {}
+        // 非IE浏览器
+      } else {
         try {
-				if (navigator.plugins && navigator.plugins.length > 0) {
-          console.log(navigator.plugins,'插件列表')
-					var swf = navigator.plugins["Shockwave Flash"];
-					if (swf) {
-						hasFlash = 1;
-            isValid = 1;
-            // 描述
-            				
-            var words = swf.description.split(" ");
-            console.log(words,'查看描述')	
-						for (var i = 0; i < words.length; ++i) {
-							if (isNaN(parseInt(words[i]))) continue;
-							flashVersion = parseInt(words[i]);
-						}
-						if(swf.filename && swf.filename == 'internal-not-yet-present'){ //过期
-							isValid = 0;
-						}
-					}
-				}
-      } catch (e) {}
-        console.log(hasFlash,isValid,'是否按照flash')
+          if (navigator.plugins && navigator.plugins.length > 0) {
+            console.log(navigator.plugins, "插件列表");
+            var swf = navigator.plugins["Shockwave Flash"];
+            if (swf) {
+              hasFlash = 1;
+              isValid = 1;
+              // 描述
+
+              var words = swf.description.split(" ");
+              console.log(words, "查看描述");
+              for (var i = 0; i < words.length; ++i) {
+                if (isNaN(parseInt(words[i]))) continue;
+                flashVersion = parseInt(words[i]);
+              }
+              if (swf.filename && swf.filename == "internal-not-yet-present") {
+                //过期
+                isValid = 0;
+              }
+            }
+          }
+        } catch (e) {}
+        console.log(hasFlash, isValid, "是否按照flash");
         return { flash: hasFlash, version: flashVersion, vaild: isValid };
       }
     }
   },
   mounted() {
-     this.flashOpen()
-     console.log(window.videojs,'这啥')
+    this.flashOpen();
+    console.log(window.videojs, "这啥");
   }
 };
 </script>
