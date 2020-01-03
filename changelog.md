@@ -1,5 +1,16 @@
 ## 不知名的总结 以后有机会搬到vue-press里把
-
+### 未完成的事
+1. Vue文档过一遍 全家桶都再过一遍 底层可以了解一遍了
+2. js高程过一次
+3. es6过一次 重点是promise anysn 事件循环机制
+4. echarts highcharts的玩耍 canvas与svg
+5. videojs的封装与翻译 videojs
+5. 动画库 常用动画库的封装 animation
+6. nodejs mysql 
+7. 获取用户信息 flash 性能检测
+8. 移动端脚手架的架构搭建
+9. ssr渲染
+10. 每日算法 但是要总结套路来刷
 ### elementUI的坑点与学习点
 1. 滑动条的布局触发弹框 所谓的穿透问题 这个在小程序 移动端可以用同样的方法解决
 +  elementUI默认给body添加了一个paddingLeft：-17px和超出隐藏的样式 来覆盖原本的滚动条 处理方法可以直接覆盖elementUI添加的样式 因为这里改变的滚动条长度会使得与他同时使用的this.$message组件出现位置偏移的情况 

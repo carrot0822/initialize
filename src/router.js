@@ -54,7 +54,7 @@ export default new Router({
             children:[
                 {
                     path:'index',
-                    component:()=>import('../src/components/video/video.vue'),
+                    component:()=>import('../src/components/date/date.vue'),
                     name:'test',
                     meta:{
 
