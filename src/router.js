@@ -33,6 +33,37 @@ export default new Router({
             ]
         },
         {
+            path:'/animation',
+            component:Layout,
+            redirect:'/animation/index',
+            children:[
+                {
+                    path:'index',
+                    component:()=>import('../src/components/annimation/loading.vue'),
+                    name:'loading',
+                    meta:{
+                        
+                    }
+                },
+                {
+                    path:'snow',
+                    component:()=>import('../src/components/annimation/particlar.vue'),
+                    name:'sonw',
+                    meta:{
+
+                    }
+                },
+                {
+                    path:'button',
+                    component:()=>import('../src/components/annimation/button.vue'),
+                    name:'button',
+                    meta:{
+                        
+                    }
+                }
+            ]
+        },
+        {
             path:'/copy',
             component:Layout,
             redirect: '/copy/index',
