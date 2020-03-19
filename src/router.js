@@ -60,6 +60,53 @@ export default new Router({
                     meta:{
                         
                     }
+                },
+                {
+                    path:'slide',
+                    component:()=> import('../src/components/annimation/slide.vue'),
+                    name:'slide',
+                    meta:{
+
+                    }
+                },
+                {
+                    path:'floatText',
+                    component:()=>import('../src/components/annimation/floatText.vue'),
+                    name:'floatText',
+                    meta:{
+
+                    }
+                },
+                {
+                    path:'diyForm',
+                    component:()=>import('../src/components/annimation/form.vue'),
+                    name:'diyForm',
+                    meta:{
+
+                    }
+                },
+                {
+                    path:'card',
+                    component:()=>import('../src/components/annimation/card.vue'),
+                    name:'card',
+                    meta:{
+                        
+                    }
+                }
+            ]
+        },
+        {
+            path:'/common',
+            component:Layout,
+            redirect:'/common/index',
+            children:[
+                {
+                    path:'index',
+                    component:()=>import('../src/components/common/tantanSlide/tantanSlide.vue'),
+                    name:"tantan",
+                    meta:{
+                        text:'探探'
+                    }
                 }
             ]
         },
