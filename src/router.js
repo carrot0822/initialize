@@ -92,24 +92,18 @@ export default new Router({
                     meta:{
                         
                     }
-                }
-            ]
-        },
-        {
-            path:'/common',
-            component:Layout,
-            redirect:'/common/index',
-            children:[
+                },
                 {
-                    path:'index',
-                    component:()=>import('../src/components/common/tantanSlide/tantanSlide.vue'),
-                    name:"tantan",
+                    path:'tab',
+                    component:()=>import('../src/components/annimation/tab.vue'),
+                    name:'tab',
                     meta:{
-                        text:'探探'
+
                     }
                 }
             ]
         },
+        
         {
             path:'/copy',
             component:Layout,

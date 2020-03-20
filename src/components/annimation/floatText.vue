@@ -36,7 +36,7 @@ export default {
 </script>
 <style lang="scss">
 /**锁作用域会出问题 对于jsDOM生成的元素*/
-
+// 利用伪类隐藏在-130%Y轴 然后对整体使用130%Y轴位移就刚好把另一个藏起来了 AE里的蒙版+父子联动
 .aniBox {
   display: flex;
   justify-content: center;
