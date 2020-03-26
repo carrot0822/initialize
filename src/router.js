@@ -100,10 +100,40 @@ export default new Router({
                     meta:{
 
                     }
+                },
+                {
+                    path:'redMoon',
+                    component:()=>import('../src/components/annimation/redMoon.vue'),
+                    name:'redMoon',
+                    meta:{
+                        
+                    }
+                },
+                {
+                    path:'textShow',
+                    component:()=>import('../src/components/annimation/textShow.vue'),
+                    name:'textShow',
+                    meta:{
+                        
+                    }
                 }
             ]
         },
-        
+        {
+            path:'/common',
+            component:Layout,
+            redirect:'/common/index',
+            children:[
+                {
+                    path:'index',
+                    component:()=>import('../src/components/common/pagination/page.vue'),
+                    name:'page',
+                    meta:{
+                        
+                    }
+                }
+            ]
+        },
         {
             path:'/copy',
             component:Layout,

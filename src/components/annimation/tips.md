@@ -12,6 +12,8 @@
 ## 熟悉的css样式但不常用
 1. border-raduis: 10px 20px 30px 40px 代表左 右 下左 的圆角大小 等同于双组的 10px 20px 30px 40px/10px 20px 30px 40px 代表了四周形成弧的X轴和Y轴
 这样能组合许多不同的效果
+2. box-shadow:inset offsetX offsetY blur-raduis spread-radius color
++ inset 不设置默认是向外部出现阴影 offset偏移距离 blur-radius 模糊半径 阴影扩散半径 color 颜色
 
 ## 陌生的scss语法
 
