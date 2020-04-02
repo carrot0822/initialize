@@ -116,6 +116,14 @@ export default new Router({
                     meta:{
                         
                     }
+                },
+                {
+                    path:'dialog',
+                    component:()=> import('../src/components/annimation/dialog.vue'),
+                    name:"dialog",
+                    meta:{
+                        
+                    }
                 }
             ]
         },
