@@ -51,7 +51,11 @@ export default {
 
 <style lang="scss" scoped>
 @import url(https://fonts.googleapis.com/css?family=Lato);
-
+/**::after
+基础搭建： 按钮生成 before生成滑动的颜色 after根据data-text生成文字 button搭配基础底色
+动画搭建： 先使用transform转移伪类对象的初始位置 再使用hover做触发关键帧 移动了原始位置 完成动画
+overflow hidden是遮掩的关键 字体的变色也需要根据动画时间出现
+ */
 :root {
   --primary-color: hsl(171, 100%, 41%);
   --success-color: hsl(141, 53%, 53%);

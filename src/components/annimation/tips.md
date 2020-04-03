@@ -25,7 +25,14 @@
 + Text-Stroke：文本描边 IE不支持
 
 
-4. animation：
+4. animation： name duration timing-function delay iteration-count diretion fill-mode state
++ iteration： n次 infinite 无限次
++ direction： normal 正常执行1次 reverse 反向播放一次 alternate pop动画1 3 5正向播放 2 4 6反向播放
++ fill-mode: 动画不执行的时候 需要应用的样式 forwards backwards both？ 这个会改变设定的初始样式  forward会提取from的第一个样式作为初始关键帧 backward是提取to作为结束后的关键帧保存 both则是两者都有 用数据表示就是 
+设定:translateX(20) 动画 from 50----》-100 forward 不使用动画初始属性 动画执行后保留最后一帧的属性 backward 执行前调用第一帧的样式 both 正常的动画关键帧 
++ play-state：设定后会暂停动画和启动动画 paused running
+
+我有丶混淆动画和 过渡动画了 过渡动画是确切的结果  动画是执行之后会回归到原来的状态 fill-mode则是继承动画的结果达到过渡的目的
 5. background属性相关
 + background
 
@@ -33,7 +40,7 @@
 append：整理数组用 像padding（）这种值是被算成数组的
 comma：分割形式 与上面的append连用 这里是逗号分割
 comma-spread：除开逗号还有空格分割 不过一般都是逗号
-
+length()：返回一个列表中有几个值（1 2 3 4） 会返回4
 ## 新增的HTMLDOM属性
 1. HTMLDOM.classList. add() remove() replace()  可以方便的查找删除替换某个类名
 
@@ -41,6 +48,11 @@ comma-spread：除开逗号还有空格分割 不过一般都是逗号
 
 
 ## 新增的js语法
+
+
+
+## 忘记的JS函数
+1. Math.random() 生成0~1的随机数 这里好像有精准度问题
 
 ## 有丶东西的小网站
 
