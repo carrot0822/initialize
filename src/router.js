@@ -124,6 +124,14 @@ export default new Router({
                     meta:{
                         
                     }
+                },
+                {
+                    path:'filter',
+                    component:()=> import('../src/components/annimation/filter.vue'),
+                    name:'filter',
+                    meta:{
+                        des:'滤镜'
+                    }
                 }
             ]
         },

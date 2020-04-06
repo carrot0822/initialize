@@ -14,6 +14,10 @@
 3. :root 声明全局css变量时 等同于css匹配文档树的根元素
 
 4. ::backdrop 全屏样式用的
+
+5. backdrop-filter：你为一个元素后面区域添加图形效果 也就是扭曲背景图片用的属性 在子元素上使用
+6. filter：与5的属性方法一致 不过这个是改本身 上面那个是改自己背后的元素
+6. mix-blend-mode：混合模式 同PS
 ## 熟悉的css样式但不常用
 1. border-raduis: 10px 20px 30px 40px 代表左 右 下左 的圆角大小 等同于双组的 10px 20px 30px 40px/10px 20px 30px 40px 代表了四周形成弧的X轴和Y轴
 这样能组合许多不同的效果
