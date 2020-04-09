@@ -132,6 +132,14 @@ export default new Router({
                     meta:{
                         des:'滤镜'
                     }
+                },
+                {
+                    path:'clip',
+                    component:()=> import('../src/components/annimation/clipPath.vue'),
+                    name:'clip',
+                    meta:{
+                        des:'滤镜'
+                    }
                 }
             ]
         },
