@@ -43,5 +43,5 @@ function twoNums2(nums,target){
  * 两数之和链表
  */
 function twoNumsLink(){
-
+    
 }
