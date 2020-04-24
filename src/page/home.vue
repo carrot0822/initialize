@@ -13,30 +13,28 @@
     <!-- 雷达图  饼图 柱形图 -->
     <section class="chartsBox">
       <el-row style="background:#fff padding:16px 16px 0;margin-bottom:32px;" :gutter="32">
-        <el-col  :xs="24" :sm="24" :lg="8">
+        <el-col :xs="24" :sm="24" :lg="8">
           <div class="chart-wrapper">
-              <radar-chart></radar-chart>
+            <radar-chart></radar-chart>
           </div>
         </el-col>
-        <el-col  :xs="24" :sm="24" :lg="8">
+        <el-col :xs="24" :sm="24" :lg="8">
           <div class="chart-wrapper">
-              <pie-chart></pie-chart>
+            <pie-chart></pie-chart>
           </div>
         </el-col>
-        <el-col  :xs="24" :sm="24" :lg="8">
+        <el-col :xs="24" :sm="24" :lg="8">
           <div class="chart-wrapper">
-              <bar-chart></bar-chart>
+            <bar-chart></bar-chart>
           </div>
         </el-col>
       </el-row>
     </section>
     <!-- 其他浏览的图表 -->
     <el-row style="background:#fff padding:16px 16px 0;margin-bottom:32px;" :gutter="8">
-        <el-col :xs="24" :sm="24" :lg="8">
-            <div class="tableData">
-
-            </div>
-        </el-col>
+      <el-col :xs="24" :sm="24" :lg="8">
+        <div class="tableData"></div>
+      </el-col>
     </el-row>
   </div>
 </template>
@@ -44,9 +42,9 @@
 <script>
 import PanelGroup from "../layout/home/panelGroup";
 import LineChart from "../layout/home/linechart";
-import RadarChart from "../layout/home/rardachart"
-import PieChart from "../layout/home/piechart"
-import BarChart from '../layout/home/barchart'
+import RadarChart from "../layout/home/rardachart";
+import PieChart from "../layout/home/piechart";
+import BarChart from "../layout/home/barchart";
 const lineChartData = {
   newVisitis: {
     expectedData: [100, 120, 161, 134, 105, 160, 165],
@@ -66,8 +64,6 @@ const lineChartData = {
   }
 };
 
-
-
 export default {
   data() {
     return {
@@ -84,7 +80,8 @@ export default {
     LineChart,
     RadarChart,
     PieChart,
-    BarChart
+    BarChart,
+    
   }
 };
 </script>
