@@ -24,5 +24,5 @@ function format(obj,fmt){
     
       return fmt;
 }
-
+const testData = 'Sat Jan 01 2028 00:00:00 GMT+0800'
 console.log(format(Data,'yyyy-MM-dd'))
