@@ -184,14 +184,16 @@ export default new Router({
             path: '/area',
             component: Layout,
             redirect: '/area/index',
-            children: [{
-                path: 'index',
-                component: () => import('../src/components/area/area.vue'),
-                name: 'page',
-                meta: {
-
-                }
-            }]
+           
+        }
+        {
+            path: '/demo',
+            component: Layout,
+            redirect: '/area/index',
+           children:[{
+               path:'index',
+               component:()=> import('../src/components/translate/move.vue')
+           }]
         }
     ]
 })
