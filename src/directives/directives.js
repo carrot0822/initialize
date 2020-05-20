@@ -1,8 +1,10 @@
 import copy from './copy'
 import drag from './drag'
+import tooltip from './tooltip'
 const directives = {
     copy,
-    drag
+    drag,
+    tooltip
 }
 
 export default {

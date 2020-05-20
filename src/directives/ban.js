@@ -11,3 +11,5 @@ const vBan = {
         })
     }
 }
+
+export default vBan

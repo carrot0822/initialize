@@ -185,7 +185,7 @@ export default new Router({
             component: Layout,
             redirect: '/area/index',
            
-        }
+        },
         {
             path: '/demo',
             component: Layout,

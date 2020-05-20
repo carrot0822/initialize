@@ -9,6 +9,9 @@
         <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
       </span>
     </el-dialog>
+    <div class="box">
+      <div v-tooltip="{content: tooltip, color:'white', bgColor: 'black', pos: 'left'}" class="testTool">看一下有没有框框</div>
+    </div>
   </div>
 </template>
 
@@ -17,7 +20,8 @@ export default {
   data() {
     return {
       copyText: "要 Copy 的内容",
-      dialogVisible: true
+      dialogVisible: true,
+      tooltip:'要提示的内容'
     };
   },
   methods: {
@@ -30,4 +34,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.box{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 </style>
