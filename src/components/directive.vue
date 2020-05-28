@@ -39,5 +39,6 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  color:'1f1e33';
 }
 </style>
