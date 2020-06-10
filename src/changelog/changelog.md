@@ -64,3 +64,21 @@ rest...参数用来代替ES5的 argument类数组
 1. 数学1800题 660 
 2. pdf.js 一定要下老板demo  新版不是很好用
 3. 正则表达式 去掉反斜杠 反斜杠会被转义 这个问题需要解决
+
+## 2020年6月8日18:05:04
+1. excel有思路了
+2. pdf.js 可以转为pdf 并且 iframe可以规避被转码
+3. 网络层IP分配 还有IP的计算  今天是摸了 然后 尽快完善 溜溜球 底气
+
+## 2020年6月9日09:59:47
+1. uniapp app跳转协议
+2. 普通html5页面跳转app
+3. 小程序内分享跳转app
+4. 微信 html页面跳转app
+5. excel预览 http://blog.haoji.me/js-excel.html
+6. http://demo.haoji.me/2017/02/08-js-xlsx/
+7. pdf.js的预览demo不知道在哪 但是我可以自己写
+
+## 2020年6月10日17:46:13
+1. iframe傻逼跳转 只会在当前目录下跳转 跳不到外面去 window.location paraent.location也一样
+2. 数据超过1W条就会卡 优化点是分批渲染 定时器也好 requestFrame也好 都可以 不要一口气渲染 拿到数据了慢慢渲染就是
