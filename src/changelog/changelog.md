@@ -78,7 +78,7 @@ rest...参数用来代替ES5的 argument类数组
 5. excel预览 http://blog.haoji.me/js-excel.html
 6. http://demo.haoji.me/2017/02/08-js-xlsx/
 7. pdf.js的预览demo不知道在哪 但是我可以自己写
-
+8. 微信小程序打开pdf wx.downloadFile，然后wx.openDocumen 这个方法应该能打开其他的文档文件
 ## 2020年6月10日17:46:13
 1. iframe傻逼跳转 只会在当前目录下跳转 跳不到外面去 window.location paraent.location也一样
 2. 数据超过1W条就会卡 优化点是分批渲染 定时器也好 requestFrame也好 都可以 不要一口气渲染 拿到数据了慢慢渲染就是
@@ -99,3 +99,5 @@ rest...参数用来代替ES5的 argument类数组
 3. 408 天勤 王道 历年真题 所有高校涉及到的题 刷就完事了
 4. 英语
 5. 
+
+## 2020年6月18日18:01:08
