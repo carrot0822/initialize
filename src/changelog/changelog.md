@@ -120,3 +120,13 @@ rest...参数用来代替ES5的 argument类数组
  quadraticCurveTo 【二次方贝兹曲线】
 4、然后通过 canvas鼠标响应事件 getBoundingClientRect 获取当前鼠标的坐标点
 5、然后通过canvas isPointInPath 判断当前坐标点是否在 绘制图形的区域
+
+## 2020年7月1日09:44:45
+1. 页面生命周期事件
+2. each遍历
+
+## 2020年7月2日16:35:17
+1. 虚拟机逃逸 沙箱逃逸
+
+## 2020年7月6日17:23:45
+1. git cherry-pick git rebase用于解决多人合作 git还是好好总结一下
