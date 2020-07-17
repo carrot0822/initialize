@@ -130,3 +130,14 @@ rest...参数用来代替ES5的 argument类数组
 
 ## 2020年7月6日17:23:45
 1. git cherry-pick git rebase用于解决多人合作 git还是好好总结一下
+
+## 2020年7月9日17:20:08
+1. http://www.guandao.cc/appsearch/search?search=vpn
+
+## 2020年7月11日16:03:11
+
+1. 图片预览 pdf预览 excel预览 
+2. fileReader对象 blob对象 arrayBuffer  formData对象 各种读取文件输出url的办法
+3. 深拷贝 浅拷贝  JSON.parse实现深拷贝的缺陷 是date对象 正则 error对象会返回空对象 函数会返回undifined
+4. 灰度发布一般怎么设计 热更新方案
+5. Object.defineProperty除了set get外还有什么属性 这个问题很容易再问了Vue2双向绑定原理之后问。writeable,value ,configurable 等

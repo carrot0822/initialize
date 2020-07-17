@@ -8,9 +8,11 @@
 ## achive 档案中心
 + archiveBox 档案盒管理
 + archive-manage：归档中心
++ 
 1. add-archive ：新增档案
-
-
++ 涉及到与硬件方 使用websocket 服务通信 来扫描RFID
++ 涉及到图片上传预览 pdf上传预览 excel上传预览
++ 一般新增档案更改了之后  preview-archive  archive-change archive-change-preview(档案管理/编辑) 都会更改
 
 2. preview-archive：新增档案预览 区别是无法输入 全禁止
 3. archive-history： 待归档历史
